@@ -16,14 +16,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Игра</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <h1>Текущее состояние игры</h1>
-<p>Персонаж: ${game.player.name}</p>
-<p>Здоровье: ${game.player.health}</p>
-<p>Очки: ${game.player.score}</p>
+<div class="stats">
+<p>Персонаж: <span>${game.player.name}</span></p>
+<p>Здоровье: <span class="health">${game.player.health}</span></p>
+<p>Очки: <span>${game.player.score}</span></p>
 <p>Комната: ${game.currentRoom}</p>
-<p>Сообщение: ${game.message}</p>
+</div>
 
 <c:if test="${game.isGameOver()}">
   <h2>Игра завершена. Вы проиграли.</h2>
@@ -32,6 +34,16 @@
     <button type="submit">Начать заново</button>
   </form>
 </c:if>
+<!-- Сообщение игры -->
+
+
+
+
+
+
+<!-- Действия игрока -->
+
+
 
 <c:if test="${not game.isGameOver()}">
   <p>${game.message}</p>
